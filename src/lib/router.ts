@@ -147,20 +147,21 @@ export async function appRoutes(app: FastifyInstance){
         return summary
     })
 
-    // app.delete('/habit/:id', async (request) => {
-    //     const habitParams = z.object({
-    //         id: z.string().uuid(),
-    //     })
+    app.delete('/habit/:id', async (request) => {
+        const habitParams = z.object({
+            id: z.string().uuid(),
+        })
 
-    //     const {id} = habitParams.parse(request.params)
+        const {id} = habitParams.parse(request.params)
 
+        console.log(id)
 
-    //     const deleteHabit = await prisma.habit.deleteMany({
-    //         where:{
-    //             id: id,
-    //         }
-    //     })
+        // const deleteHabit = await prisma.habit.deleteMany({
+        //     where:{
+        //         id: id,
+        //     }
+        // })
 
-    //     return deleteHabit
-    // })
+        // return deleteHabit
+    })
 }
